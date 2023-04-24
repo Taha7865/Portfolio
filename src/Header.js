@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { useCarousel } from './useCarousel';
+// import React, { useState, useEffect, useCallback } from 'react';
 import { Element } from 'react-scroll';
 import { Link } from 'react-scroll';
-import { useInView } from 'react-intersection-observer';
+// import { useInView } from 'react-intersection-observer';
 import GitHubProjects from './GitHubProjects';
 
 
@@ -105,7 +104,7 @@ function Header() {
 
                 <div class="w-full lg:w-2/5 -translate-y-10">
 
-                  <img src="\images\IMG_0323[6091].jpg" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block" />
+                  <img src="\images\IMG_0323[6091].jpg" alt="Head Pic" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block" />
 
 
                 </div>
