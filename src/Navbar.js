@@ -37,8 +37,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto font-serif">
         <div className="flex justify-between items-center px-6 md:px-8 lg:px-16">
-          <div className="text-2xl font-bold text-white">Taha Ahmed</div>
-          <nav className="flex space-x-4">
+          <div className="text-2xl font-bold text-cyan-400 font-sans">Taha Ahmed</div>
+          <nav className="flex space-x-4 font-sans">
             <Link
               className={linkClass('section1')}
               to="section1"
