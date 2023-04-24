@@ -65,7 +65,7 @@ function Header() {
               <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0 ">
 
 
-                <div id="profile" class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white mx-6 lg:mx-0 opacity-90 -translate-y-10">
+                <div id="profile" class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg shadow-2xl bg-white mx-6 lg:mx-0 opacity-90 -translate-y-10">
 
 
                   <div class="p-4 md:p-12 text-center lg:text-left">
@@ -104,7 +104,7 @@ function Header() {
 
                 <div class="w-full lg:w-2/5 -translate-y-10">
 
-                  <img src="\images\IMG_0323[6091].jpg" alt="Head Pic" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block" />
+                  <img src="\images\IMG_0323[5333].jpg" alt="Head Pic" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block" />
 
 
                 </div>
