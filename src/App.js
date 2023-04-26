@@ -17,9 +17,9 @@ function App() {
     return (
    
     <div>
-      
-      <Navbar/>
-      
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
         
         <animated.div style = {props}><Header/></animated.div>
       </div>

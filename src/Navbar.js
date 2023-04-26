@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full py-4 transition duration-300 ease-in-out z-50 ${
+      className={`md:fixed top-0 left-0 w-full py-4 transition duration-300 ease-in-out z-50 ${
         isScrolled ? 'bg-gray-800 shadow-md' : ''
       }`}
     >
@@ -39,6 +39,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center px-6 md:px-8 lg:px-16">
           <div className="text-2xl font-bold text-cyan-400 font-sans">Taha Ahmed</div>
           <nav className="flex space-x-4 font-sans">
+            
             <Link
               className={linkClass('section1')}
               to="section1"
@@ -50,6 +51,7 @@ const Navbar = () => {
             >
               Home
             </Link>
+            
             <Link
               className={linkClass('section2')}
               to="section2"
