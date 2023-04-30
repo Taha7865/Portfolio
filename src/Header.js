@@ -52,7 +52,7 @@ function Header() {
 
         <main class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black flex-grow">
 
-          <section class="container mx-auto px-4 pb-2 md:py-8">
+          <section class="container mx-auto px-4 sm:px-2 pb-2 md:py-8  ">
             <div class="text-5xl font-semibold pt-4 lg:pt-0 relative top-10 text-center items-center text-white font-sans -translate-y-3">Big ambitions start with 0's and 1's</div>
 
 
@@ -128,7 +128,7 @@ function Header() {
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
             <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Skills</div>
-            <div class="mt-2 font-medium font-serif flex justify-center text-white text-xl">Below are my skills, always learning more</div>
+            <div class="mt-2 text-md font-medium font-serif flex justify-center text-white md:text-xl">Below are my skills, always learning more</div>
             <section class="container mx-auto px-8">
               <section class="container mx-auto my-16">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 font-thin">
