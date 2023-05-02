@@ -53,7 +53,7 @@ function Header() {
         <main class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black flex-grow">
 
           <section class="container mx-auto px-4 sm:px-2 pb-2 md:py-8  ">
-            <div class="text-5xl font-semibold pt-4 lg:pt-0 relative top-10 text-center items-center text-white font-sans -translate-y-3">Big ambitions start with 0's and 1's</div>
+            <div class="text-5xl font-semibold pt-4 lg:pt-2 relative top-4 lg:top-20  text-center items-center text-white font-sans -translate-y-3 typing-animation">Big ambitions start with 0's and 1's</div>
 
 
 
