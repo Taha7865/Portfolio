@@ -127,8 +127,8 @@ function Header() {
       <Element name="section2">
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
-            <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Skills</div>
-            <div class="mt-2 text-md font-medium font-serif flex justify-center text-white md:text-xl">Below are my skills, always learning more</div>
+            <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Skills</div>
+            <div class="mt-2 text-md font-medium font-sans flex justify-center text-white md:text-xl">Below are my skills, always learning more</div>
             <section class="container mx-auto px-8">
               <section class="container mx-auto my-16">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 font-thin">
@@ -187,8 +187,8 @@ function Header() {
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
             <section class="container mx-auto px-4 py-8 w-full">
-              <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Timeline</div>
-              <div class="mt-2 font-medium font-serif flex justify-center text-white text-xl">Below are my experiences</div>
+              <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Timeline</div>
+              <div class="mt-2 font-medium font-sans flex justify-center text-white text-xl">Below are my experiences</div>
               <section class="container mx-auto px-4 py-8 w-full">
                 <body>
                   <div class="md:container mx-auto py-10 px-4 flex flex-col justify-center items-center">
@@ -255,8 +255,8 @@ function Header() {
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
             <section class="container mx-auto px-4 py-8 w-full">
-              <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Projects</div>
-              <div class="mt-2 font-medium font-serif flex justify-center text-white text-xl">Some of my projects that highlight my skill set</div>
+              <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Projects</div>
+              <div class="mt-2 font-medium font-sans flex justify-center text-white text-xl">Some of my projects that highlight my skill set</div>
               <GitHubProjects />
 
 
@@ -269,7 +269,7 @@ function Header() {
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
             <section class="container mx-auto px-4 py-8 w-full">
-              <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Contact Me</div>
+              <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Contact Me</div>
 
               <section class="container mx-auto px-4 py-8 w-full">
 

@@ -11,7 +11,10 @@ const Navbar = () => {
     } else {
       setIsScrolled(false);
     }
+
   };
+  
+
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -25,8 +28,8 @@ const Navbar = () => {
   };
 
   const linkClass = (section) =>
-    `px-4 cursor-pointer text-white font-bold ${
-      activeLink === section ? 'text-decoration-line: underline' : ''
+    `px-4 cursor-pointer font-bold  ${
+      activeLink === section ? 'text-cyan-400' : 'text-white'
     }`;
 
   return (
@@ -41,7 +44,7 @@ const Navbar = () => {
           <nav className="flex space-x-4 font-sans">
             
             <Link
-              className={linkClass('section1')}
+              className={linkClass('section1') }
               to="section1"
               spy={true}
               smooth={true}
@@ -91,7 +94,7 @@ const Navbar = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-100}
+              offset={-300}
               onSetActive={() => handleSetActive('section4')}
             >
               Contact 
