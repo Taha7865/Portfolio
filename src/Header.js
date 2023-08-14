@@ -1,7 +1,7 @@
- import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Element } from 'react-scroll';
 import { Link } from 'react-scroll';
-import { useInView } from 'react-intersection-observer';
+// import { useInView } from 'react-intersection-observer';
 import GitHubProjects from './GitHubProjects';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
@@ -13,7 +13,8 @@ import Swal from 'sweetalert2';
 
 
 function Header() {
-  const form = useRef();
+  // eslint-disable-next-line
+   const form = useRef();
 
   // const slidesCount = 2;
   // const [activeIndex, changeSlide] = useCarousel(slidesCount);
