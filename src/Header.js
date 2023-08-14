@@ -1,8 +1,10 @@
-// import React, { useState, useEffect, useCallback } from 'react';
+ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Element } from 'react-scroll';
 import { Link } from 'react-scroll';
-// import { useInView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 import GitHubProjects from './GitHubProjects';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 
 
@@ -11,38 +13,58 @@ import GitHubProjects from './GitHubProjects';
 
 
 function Header() {
+  const form = useRef();
+
   // const slidesCount = 2;
   // const [activeIndex, changeSlide] = useCarousel(slidesCount);
-
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
-    };
-
-    try {
-      const response = await fetch('https://tahaahmedportfolio.herokuapp.com/sendmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert('Email sent successfully');
-      } else {
-        const errorDetails = await response.json();
-        console.error('Error details:', errorDetails);
-        throw new Error('Error sending email');
-      }
-    } catch (error) {
-      console.error('Error:', error);
+    const form = e.target
+    const formValues = {
+      from_name: form.name.value,
+      user_email: form.email.value,
+      message: form.message.value,
     }
+    emailjs.send("service_6oelrta","template_gcfu9rd",formValues,"24-Z_dJxnK6PUoLtA")
+      .then((result) => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Email Sent!',
+          text: 'Thank you for contacting me. I will get back to you soon!',
+        });
+      }, (error) => {
+          console.log(error.text);
+      });
   };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const formData = {
+  //     name: e.target.name.value,
+  //     email: e.target.email.value,
+  //     message: e.target.message.value,
+  //   };
+
+  //   try {
+  //     const response = await fetch('https://tahaahmedportfolio.herokuapp.com/sendmail', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     if (response.ok) {
+  //       alert('Email sent successfully');
+  //     } else {
+  //       const errorDetails = await response.json();
+  //       console.error('Error details:', errorDetails);
+  //       throw new Error('Error sending email');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
 
   return (
 
@@ -53,7 +75,8 @@ function Header() {
         <main class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black flex-grow">
 
           <section class="container mx-auto px-4 pb-2 md:py-8">
-          <div class="text-5xl font-semibold pt-4 lg:pt-2 relative top-4 lg:top-20  text-center items-center text-white font-sans -translate-y-3 typing-animation">Big ambitions start with 0's and 1's</div>
+            <div class="text-5xl font-semibold pt-4 lg:pt-0 relative top-10 text-center items-center text-white font-sans -translate-y-3">Big ambitions start with 0's and 1's</div>
+
 
 
             <body class="font-sans antialiased leading-normal tracking-wider bg-cover">
@@ -126,8 +149,8 @@ function Header() {
       <Element name="section2">
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
-            <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Skills</div>
-            <div class="mt-2 font-medium font-sans flex justify-center text-white text-xl">Below are my skills, always learning more</div>
+            <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Skills</div>
+            <div class="mt-2 font-medium font-serif flex justify-center text-white text-xl">Below are my skills, always learning more</div>
             <section class="container mx-auto px-8">
               <section class="container mx-auto my-16">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 font-thin">
@@ -186,8 +209,8 @@ function Header() {
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
             <section class="container mx-auto px-4 py-8 w-full">
-              <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Timeline</div>
-              <div class="mt-2 font-medium font-sans flex justify-center text-white text-xl">Below are my experiences</div>
+              <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Timeline</div>
+              <div class="mt-2 font-medium font-serif flex justify-center text-white text-xl">Below are my experiences</div>
               <section class="container mx-auto px-4 py-8 w-full">
                 <body>
                   <div class="md:container mx-auto py-10 px-4 flex flex-col justify-center items-center">
@@ -198,8 +221,8 @@ function Header() {
                         <div class="text-left order-2 md:order-none">
                           <h2 class="text-xl font-semibold text-white">2023</h2>
                           <h3 class="text-2xl text-yellow-700 font-bold">Software Engineer Intern</h3>
-                          <h4 class="text-xl font-semibold text-white">Optum UHG | Austin, TX</h4>
-                          <p class="text-gray-400">Incoming Internship</p>
+                          <h4 class="text-xl font-semibold text-white">Austin, TX</h4>
+                          <p class="text-gray-400 overflow-wrap w-80">As a summer intern at Optum, I developed a scalable dashboard using Flask and React that aggregated hundreds of security vulnerabilities within the business and helped to remediate them. My work on the web page application software involved integrating multiple APIs into a single platform that developers could use to quickly and easily access the data they needed. This reduced the amount of time developers spent searching for and compiling data, which allowed them to focus on more productive tasks. As a result of my work, the company's developers were able to ship new features to production more quickly. </p>
                         </div>
 
                         <a class="order-1 md:order-none link" href="https://optum.com" target='_blank' rel="noreferrer">
@@ -212,16 +235,16 @@ function Header() {
                         <div class="text-left">
                           <h2 class="text-xl font-semibold text-white">2022</h2>
                           <h3 class="text-2xl text-yellow-700 font-bold">Software Engineer Intern</h3>
-                          <h4 class="text-xl font-semibold text-white">UnitedHealth Care | Dallas, TX</h4>
-                          <p class="text-gray-400 overflow-wrap w-72">At UnitedHealth Care, I designed a comprehensive web interface using Angular, CSS, JavaScript, and HTML, covering all aspects from requirements engineering to design, implementation, and debugging. I also established a connection between a server and databases using technologies such as C#, ASP.NET, and SQL Server, allowing for the real-time display of thousands of data points. Additionally, I introduced various functionality enhancements to create a modern and visually appealing user interface.</p>
+                          <h4 class="text-xl font-semibold text-white">Dallas, TX</h4>
+                          <p class="text-gray-400 overflow-wrap w-80">At UnitedHealth Care, I designed a comprehensive web interface using Angular, CSS, JavaScript, and HTML, covering all aspects from requirements engineering to design, implementation, and debugging. I also established a connection between a server and databases using technologies such as C#, ASP.NET, and SQL Server, allowing for the real-time display of thousands of data points. Additionally, I introduced various functionality enhancements to create a modern and visually appealing user interface.</p>
                         </div>
                       </div>
                       <div class='flex flex-col md:flex-row items-center justify-between space-x-0 md:space-x-4 space-y-4 md:space-y-0'>
                         <div class="text-left order-2 md:order-none">
                           <h2 class="text-xl font-semibold text-white">2021</h2>
                           <h3 class="text-2xl text-yellow-700 font-bold">Computer Science Education Specialist Intern</h3>
-                          <h4 class="text-xl font-semibold text-white">UTD | Richardson, TX</h4>
-                          <p class="text-gray-400 overflow-wrap w-72">During my sophmore year of college, I had the opportunity to undertake a teaching internship. At the time, I did not realize great of an opportunity this was. This proved to be an invaluable experience not only for my professional growth, but personal as well. This allowed me to explain the fundamentals of computer science in a straightfoward manner. By working with a diverse group of students, I learned how to adapt my teaching methods to cater to different learning styles. Overall, This internship allowed me to develop effective communication styles and foster an open-minded approach where I was able to consider varying personalities and perspectives.</p>
+                          <h4 class="text-xl font-semibold text-white">Richardson, TX</h4>
+                          <p class="text-gray-400 overflow-wrap w-80">During my sophmore year of college, I had the opportunity to undertake a teaching internship. At the time, I did not realize great of an opportunity this was. This proved to be an invaluable experience not only for my professional growth, but personal as well. This allowed me to explain the fundamentals of computer science in a straightfoward manner. By working with a diverse group of students, I learned how to adapt my teaching methods to cater to different learning styles. Overall, This internship allowed me to develop effective communication styles and foster an open-minded approach where I was able to consider varying personalities and perspectives.</p>
                         </div>
                         <a class="order-1 md:order-none link" href="https://utdallas.com" target='_blank' rel="noreferrer">
                           <div class="bg-utd-logo w-24 h-24 rounded-full flex-shrink-0 p-3 border-solid border-8 border-slate-200"></div>
@@ -233,8 +256,8 @@ function Header() {
                         <div class="text-left">
                           <h2 class="text-xl font-semibold text-white">2021</h2>
                           <h3 class="text-2xl text-yellow-700 font-bold">Data Engineer Intern</h3>
-                          <h4 class="text-xl font-semibold text-white">Publishing Concepts Inc. | Dallas, TX</h4>
-                          <p class="text-gray-400 overflow-wrap w-72">As a Data Engineer Intern at Publishing Concepts Inc., I managed and archived hundreds of databases containing sensitive consumer information. I generated reports detailing database architecture and ensured data integrity. I executed stored procedures in SQL to responsibly update thousands of client materials and collaborated with developers to debug network issues and system errors.</p>
+                          <h4 class="text-xl font-semibold text-white">Dallas, TX</h4>
+                          <p class="text-gray-400 overflow-wrap w-80">As a Data Engineer Intern at Publishing Concepts Inc., I managed and archived hundreds of databases containing sensitive consumer information. I generated reports detailing database architecture and ensured data integrity. I executed stored procedures in SQL to responsibly update thousands of client materials and collaborated with developers to debug network issues and system errors.</p>
                         </div>
 
                       </div>
@@ -254,8 +277,8 @@ function Header() {
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
             <section class="container mx-auto px-4 py-8 w-full">
-              <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Projects</div>
-              <div class="mt-2 font-medium font-sans flex justify-center text-white text-xl">Some of my projects that highlight my skill set</div>
+              <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Projects</div>
+              <div class="mt-2 font-medium font-serif flex justify-center text-white text-xl">Some of my projects that highlight my skill set</div>
               <GitHubProjects />
 
 
@@ -268,7 +291,7 @@ function Header() {
         <main class="flex-grow">
           <div class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black py-4 w-full">
             <section class="container mx-auto px-4 py-8 w-full">
-              <div class="font-semibold tracking-wide font-sans flex justify-center text-4xl text-white">Contact Me</div>
+              <div class="font-semibold tracking-wide font-serif flex justify-center text-4xl text-white">Contact Me</div>
 
               <section class="container mx-auto px-4 py-8 w-full">
 
@@ -278,7 +301,7 @@ function Header() {
                 <section class="mb-32 text-center text-gray-700">
                   <div class="max-w-[700px] mx-auto px-3 lg:px-6">
                     <p class="text-center text-xl font-semibold mt-2">... Or Contact Directly Using Form Below</p>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={sendEmail}>
                       <div class="form-group mb-6 mt-3">
                         <input type="text" name="name" class="form-control block
             w-full
