@@ -166,15 +166,15 @@ function Header() {
                   <div class="bg-blue-700 p-8 rounded-lg text-center justify-center flex flex-col items-center transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
                     <i class="fa fa-desktop text-4xl"></i>
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-code" viewBox="0 0 16 16"> <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z" /> </svg>
-                    <h3 class=" text-white text-xl font-semibold mt-4">Programming Languanges</h3>
-                    <p class="pt-2 font-normal font-semibold">I have a strong foundation in multiple programming languages, including Java, C++, C#, Python, JavaScript, TypeScript and HTML. Knowing various different languanges and syntaxes allows me to create different projects using various tech stacks.</p>
+                    <h3 class=" text-white text-xl font-semibold mt-4">Programming Languages</h3>
+                    <p class="pt-2 font-normal font-semibold">I have a strong foundation in multiple programming languages, including Java, C++, C#, Python, JavaScript, TypeScript and HTML. Knowing various different languages and syntaxes allows me to create different projects using various tech stacks.</p>
                   </div>
 
 
                   <div class="bg-blue-700 p-8 rounded-lg text-center justify-center flex flex-col items-center transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
                     <svg width="100" height="100" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 6V12C4 12 4 15 11 15C18 15 18 12 18 12V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /> <path d="M11 3C18 3 18 6 18 6C18 6 18 9 11 9C4 9 4 6 4 6C4 6 4 3 11 3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /> <path d="M11 21C4 21 4 18 4 18V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /> <path d="M17.3056 17.1133L18.2147 15.1856C18.3314 14.9381 18.6686 14.9381 18.7853 15.1856L19.6944 17.1133L21.7275 17.4243C21.9884 17.4642 22.0923 17.7998 21.9035 17.9923L20.4326 19.4917L20.7797 21.61C20.8243 21.882 20.5515 22.0895 20.3181 21.961L18.5 20.9603L16.6819 21.961C16.4485 22.0895 16.1757 21.882 16.2203 21.61L16.5674 19.4917L15.0965 17.9923C14.9077 17.7998 15.0116 17.4642 15.2725 17.4243L17.3056 17.1133Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" /> </svg>
-                    <h3 class="text-white text-xl font-semibold mt-4">Datebase Management</h3>
-                    <p class="pt-2 font-normal font-semibold">In my role as a Data Engineer Intern, I managed, archived, and updated hundreds of databases containing sensitive consumer information. I am skilled in SQL and have experience ensuring data integrity and generating detailed reports on database architecture.</p>
+                    <h3 class="text-white text-xl font-semibold mt-4">Database Management</h3>
+                    <p class="pt-2 font-normal font-semibold">In my role as a Data Engineer Intern, I managed, archived, and updated hundreds of databases containing sensitive consumer information. I am skilled in SQL, have experience ensuring data integrity and generating detailed reports on database architecture.</p>
                   </div>
 
 
@@ -245,9 +245,9 @@ function Header() {
                           <h2 class="text-xl font-semibold text-white">2021</h2>
                           <h3 class="text-2xl text-yellow-700 font-bold">Computer Science Education Specialist Intern</h3>
                           <h4 class="text-xl font-semibold text-white">Richardson, TX</h4>
-                          <p class="text-gray-400 overflow-wrap w-80">During my sophmore year of college, I had the opportunity to undertake a teaching internship. At the time, I did not realize great of an opportunity this was. This proved to be an invaluable experience not only for my professional growth, but personal as well. This allowed me to explain the fundamentals of computer science in a straightfoward manner. By working with a diverse group of students, I learned how to adapt my teaching methods to cater to different learning styles. Overall, This internship allowed me to develop effective communication styles and foster an open-minded approach where I was able to consider varying personalities and perspectives.</p>
+                          <p class="text-gray-400 overflow-wrap w-80">During my sophomore year of college, I had the opportunity to undertake a teaching internship. At the time, I did not realize great of an opportunity this was. This proved to be an invaluable experience not only for my professional growth, but personal as well. This allowed me to explain the fundamentals of computer science in a straightfoward manner. By working with a diverse group of students, I learned how to adapt my teaching methods to cater to different learning styles. Overall, This internship allowed me to develop effective communication styles and foster an open-minded approach where I was able to consider varying personalities and perspectives.</p>
                         </div>
-                        <a class="order-1 md:order-none link" href="https://utdallas.com" target='_blank' rel="noreferrer">
+                        <a class="order-1 md:order-none link" href="https://utdallas.edu" target='_blank' rel="noreferrer">
                           <div class="bg-utd-logo w-24 h-24 rounded-full flex-shrink-0 p-3 border-solid border-8 border-slate-200"></div>
                         </a>                      </div>
                         
