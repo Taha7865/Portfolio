@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 
 function Header() {
   // eslint-disable-next-line
-   const form = useRef();
+  const form = useRef();
 
   // const slidesCount = 2;
   // const [activeIndex, changeSlide] = useCarousel(slidesCount);
@@ -26,7 +26,7 @@ function Header() {
       user_email: form.email.value,
       message: form.message.value,
     }
-    emailjs.send("service_6oelrta","template_gcfu9rd",formValues,"24-Z_dJxnK6PUoLtA")
+    emailjs.send("service_6oelrta", "template_gcfu9rd", formValues, "24-Z_dJxnK6PUoLtA")
       .then((result) => {
         Swal.fire({
           icon: 'success',
@@ -34,7 +34,7 @@ function Header() {
           text: 'Thank you for contacting me. I will get back to you soon!',
         });
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
   };
   // const handleSubmit = async (e) => {
@@ -250,7 +250,7 @@ function Header() {
                         <a class="order-1 md:order-none link" href="https://utdallas.edu" target='_blank' rel="noreferrer">
                           <div class="bg-utd-logo w-24 h-24 rounded-full flex-shrink-0 p-3 border-solid border-8 border-slate-200"></div>
                         </a>                      </div>
-                        
+
 
                       <div class='flex flex-col md:flex-row items-center justify-between space-x-0 md:space-x-4 space-y-4 md:space-y-0'>
                         <a class="link" href='https://www.publishingconcepts.com/not-the-big-company' target='_blank' rel='noreferrer'><div class="bg-pci-logo w-24 h-24 rounded-full flex-shrink-0 p-3 border-solid border-8 border-slate-200 "></div></a>
