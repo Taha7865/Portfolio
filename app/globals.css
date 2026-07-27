@@ -110,99 +110,164 @@ a {
 }
 
 .tree-caption {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   color: var(--dim);
   font: 600 9px/1 var(--mono);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.tree-list {
-  border-top: 1px solid var(--line);
+.tree-root,
+.folder-row,
+.file-row {
+  display: flex;
+  align-items: center;
+  font-family: var(--mono);
 }
 
-.tree-item {
-  position: relative;
-  width: 100%;
-  padding: 16px 0;
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 0 8px;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
+.tree-root {
+  height: 34px;
+  gap: 7px;
+  color: #c2c2bd;
+  font-size: 11px;
+  font-weight: 520;
+}
+
+.root-chevron {
+  color: var(--dim);
+  transform: rotate(90deg);
+}
+
+.tree-root > svg:nth-child(2) {
   color: var(--muted);
+}
+
+.tree-children {
+  position: relative;
+  margin-left: 6px;
+  padding-left: 18px;
+}
+
+.tree-children::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 17px;
+  left: 0;
+  border-left: 1px solid var(--line-strong);
+}
+
+.tree-group {
+  position: relative;
+}
+
+.tree-group::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: -18px;
+  width: 14px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.folder-row,
+.file-row {
+  width: 100%;
+  border: 0;
+  background: transparent;
   cursor: pointer;
   text-align: left;
 }
 
-.tree-item::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 0;
-  border-top: 1px solid var(--accent);
-  transition: width 220ms ease;
+.folder-row {
+  height: 34px;
+  padding: 0;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  transition: color 150ms ease;
 }
 
-.tree-number {
-  padding-top: 2px;
+.folder-row small {
+  margin-left: auto;
+  color: #40403e;
+  font-size: 8px;
+}
+
+.tree-chevron {
   color: var(--dim);
-  font: 450 9px/1 var(--mono);
+  transition: transform 200ms ease;
 }
 
-.tree-folder,
-.tree-file {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.tree-folder {
-  font-size: 13px;
-  font-weight: 520;
-  letter-spacing: -0.01em;
-}
-
-.tree-file {
-  grid-column: 2;
-  height: 0;
-  overflow: hidden;
-  color: var(--dim);
-  font: 400 10px/1 var(--mono);
-  opacity: 0;
-  transform: translateY(-5px);
-  transition:
-    height 220ms ease,
-    margin 220ms ease,
-    opacity 160ms ease,
-    transform 220ms ease;
-}
-
-.tree-item:hover,
-.tree-item:focus-visible,
-.tree-item.is-active {
+.folder-row:hover,
+.folder-row:focus-visible,
+.file-row:hover,
+.file-row:focus-visible {
   color: var(--ink);
   outline: none;
 }
 
-.tree-item:hover::before,
-.tree-item:focus-visible::before,
-.tree-item.is-active::before {
-  width: 100%;
+.tree-group.is-active .folder-row {
+  color: var(--ink);
 }
 
-.tree-item.is-active .tree-folder svg {
+.tree-group.is-active .folder-row > svg:nth-child(2) {
   color: var(--accent);
 }
 
-.tree-item.is-active .tree-file {
-  height: 14px;
-  margin-top: 11px;
-  color: #ababA6;
+.tree-group.is-active .tree-chevron {
+  transform: rotate(90deg);
+}
+
+.file-reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 220ms ease,
+    opacity 150ms ease;
+}
+
+.tree-group.is-active .file-reveal {
+  grid-template-rows: 1fr;
   opacity: 1;
-  transform: translateY(0);
+}
+
+.file-reveal-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.file-row {
+  position: relative;
+  width: calc(100% - 21px);
+  height: 32px;
+  margin-left: 21px;
+  padding: 0 9px;
+  gap: 8px;
+  color: #b7b7b2;
+  font-size: 9px;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.file-row::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -21px;
+  width: 17px;
+  height: 17px;
+  border-bottom: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line-strong);
+}
+
+.file-row[aria-current="location"] {
+  background: #141412;
+  color: var(--ink);
+}
+
+.file-row svg {
+  color: var(--accent);
 }
 
 .explorer-foot {
@@ -323,12 +388,25 @@ a {
   gap: 30px;
 }
 
-.hero-bottom p {
+.role-focus {
   margin: 0;
-  color: #b6b6b1;
-  font-size: clamp(15px, 1.3vw, 19px);
-  line-height: 1.5;
-  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.role-focus span {
+  color: var(--dim);
+  font: 500 8px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.role-focus strong {
+  color: #c6c6c1;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 480;
+  letter-spacing: -0.025em;
 }
 
 .text-link {
@@ -619,10 +697,6 @@ a {
 
   .mobile-explorer .tree {
     margin: 0;
-  }
-
-  .mobile-explorer .tree-item {
-    grid-template-columns: 34px 1fr;
   }
 
   .site-main {

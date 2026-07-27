@@ -68,31 +68,44 @@ function Explorer({
 }) {
   return (
     <nav className="tree" aria-label="Portfolio index">
-      <p className="tree-caption">Index</p>
-      <div className="tree-list">
+      <p className="tree-caption">Directory</p>
+      <div className="tree-root">
+        <ChevronRight size={13} className="root-chevron" />
+        <FolderOpen size={15} strokeWidth={1.6} />
+        <span>taha</span>
+      </div>
+      <div className="tree-children">
         {SECTIONS.map((section, index) => {
           const active = section.id === activeId;
           const FolderIcon = active ? FolderOpen : Folder;
 
           return (
-            <button
-              className={`tree-item ${active ? "is-active" : ""}`}
-              type="button"
-              onClick={() => onNavigate(section.id)}
-              aria-expanded={active}
-              aria-current={active ? "location" : undefined}
-              key={section.id}
-            >
-              <span className="tree-number">0{index + 1}</span>
-              <span className="tree-folder">
+            <div className={`tree-group ${active ? "is-active" : ""}`} key={section.id}>
+              <button
+                className="folder-row"
+                type="button"
+                onClick={() => onNavigate(section.id)}
+                aria-expanded={active}
+              >
+                <ChevronRight size={13} className="tree-chevron" />
                 <FolderIcon size={15} strokeWidth={1.6} />
-                {section.folder}
-              </span>
-              <span className="tree-file">
-                <section.Icon size={14} strokeWidth={1.6} />
-                {section.file}
-              </span>
-            </button>
+                <span>{section.folder}</span>
+                <small>0{index + 1}</small>
+              </button>
+              <div className="file-reveal">
+                <div className="file-reveal-inner">
+                  <button
+                    className="file-row"
+                    type="button"
+                    onClick={() => onNavigate(section.id)}
+                    aria-current={active ? "location" : undefined}
+                  >
+                    <section.Icon size={14} strokeWidth={1.6} />
+                    <span>{section.file}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           );
         })}
       </div>
@@ -222,10 +235,9 @@ export default function PortfolioExperience() {
             <span>Ahmed</span>
           </h1>
           <div className="hero-bottom">
-            <p>
-              Building digital health products
-              <br />
-              in New York City.
+            <p className="role-focus">
+              <span>Current focus</span>
+              <strong>FDE / SE roles</strong>
             </p>
             <button type="button" className="text-link" onClick={() => navigate("experience")}>
               View experience <ArrowDown size={16} />
