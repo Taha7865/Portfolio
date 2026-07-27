@@ -43,8 +43,7 @@ const EXPERIENCE = [
     company: "Optum",
     acquisition: null,
     place: "Austin, TX",
-    detail:
-      "Built a Flask and React dashboard that unified hundreds of security vulnerabilities and multiple APIs into one remediation workflow.",
+    detail: "Resolving vulns across the enterprise.",
     stack: "React · Flask · API integration",
   },
   {
@@ -53,8 +52,7 @@ const EXPERIENCE = [
     company: "UnitedHealthcare",
     acquisition: null,
     place: "Dallas, TX",
-    detail:
-      "Designed a modern Angular interface and connected C#, ASP.NET, SQL Server, and live data across a full-stack system.",
+    detail: "Connecting students to insurance.",
     stack: "Angular · C# · ASP.NET · SQL",
   },
 ];
@@ -237,7 +235,7 @@ export default function PortfolioExperience() {
           <div className="hero-bottom">
             <p className="role-focus">
               <span>Current focus</span>
-              <strong>FDE / SE roles</strong>
+              <strong>Shipping products</strong>
             </p>
             <button type="button" className="text-link" onClick={() => navigate("experience")}>
               View experience <ArrowDown size={16} />
@@ -278,8 +276,8 @@ export default function PortfolioExperience() {
           <SectionLabel index="02">Contact</SectionLabel>
           <div className="contact-copy">
             <h2>Reach out.</h2>
-            <a className="email-link" href="mailto:taha.ahmed1786@gmail.com">
-              <span>taha.ahmed1786@gmail.com</span>
+            <a className="email-link" href="mailto:meet.taha.ahmed@gmail.com">
+              <span>meet.taha.ahmed@gmail.com</span>
               <ArrowUpRight size={28} />
             </a>
           </div>
