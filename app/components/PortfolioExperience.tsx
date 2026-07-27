@@ -40,10 +40,10 @@ const EXPERIENCE = [
   {
     period: "2023",
     role: "Software Engineer Intern",
-    company: "Optum",
+    company: "UnitedHealth Group",
     acquisition: null,
     place: "Austin, TX",
-    detail: "Resolving vulns across the enterprise.",
+    detail: "Resolving vulnerabilities across the enterprise.",
     stack: "React · Flask · API integration",
   },
   {
@@ -123,6 +123,7 @@ function SectionLabel({ index, children }: { index: string; children: React.Reac
 export default function PortfolioExperience() {
   const [activeId, setActiveId] = useState("about");
   const [mobileTreeOpen, setMobileTreeOpen] = useState(false);
+  const [introPhase, setIntroPhase] = useState<"typing" | "submitted" | "done">("typing");
 
   const activeIndex = useMemo(
     () => Math.max(0, SECTIONS.findIndex((section) => section.id === activeId)),
@@ -151,6 +152,40 @@ export default function PortfolioExperience() {
     return () => observers.forEach((observer) => observer.disconnect());
   }, []);
 
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIntroPhase("done");
+      return;
+    }
+
+    const submitTimer = window.setTimeout(() => setIntroPhase("submitted"), 1650);
+    const finishTimer = window.setTimeout(() => setIntroPhase("done"), 2550);
+    const skipIntro = (event: KeyboardEvent) => {
+      if (event.key !== "Enter" && event.key !== "Escape") return;
+      window.clearTimeout(submitTimer);
+      window.clearTimeout(finishTimer);
+      setIntroPhase("done");
+    };
+
+    window.addEventListener("keydown", skipIntro);
+
+    return () => {
+      window.clearTimeout(submitTimer);
+      window.clearTimeout(finishTimer);
+      window.removeEventListener("keydown", skipIntro);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (introPhase === "done") return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [introPhase]);
+
   const navigate = (id: string) => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.getElementById(id)?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
@@ -163,6 +198,43 @@ export default function PortfolioExperience() {
       <a className="skip-link" href="#about">
         Skip to portfolio
       </a>
+
+      {introPhase !== "done" ? (
+        <div
+          className={`intro-screen is-${introPhase}`}
+          role="dialog"
+          aria-label="Portfolio introduction"
+        >
+          <div className="intro-shell">
+            <div className="intro-meta">
+              <span>TAHA / QUERY</span>
+              <span>01</span>
+            </div>
+            <div className="intro-prompt">
+              <span className="intro-prompt-mark" aria-hidden="true">
+                ›
+              </span>
+              <div className="intro-question-row">
+                <span className="intro-question">Who is Taha Ahmed?</span>
+                <span className="intro-cursor" aria-hidden="true" />
+              </div>
+              <button
+                className="intro-enter"
+                type="button"
+                onClick={() => setIntroPhase("done")}
+                aria-label="Open portfolio"
+              >
+                Enter <span>↵</span>
+              </button>
+            </div>
+            <div className="intro-answer" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <aside className="explorer">
         <a href="#about" onClick={() => navigate("about")} className="brand-mark">
