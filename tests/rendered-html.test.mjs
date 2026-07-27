@@ -39,8 +39,7 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.match(html, /<title>Taha Ahmed — Product &amp; Engineering<\/title>/i);
   assert.match(html, /Taha/);
   assert.match(html, /Ahmed/);
-  assert.match(html, /What I do/);
-  assert.match(html, /Build useful software/);
+  assert.match(html, /Ambitions start with 0s and end with 1s\./);
   assert.match(html, /Resolving vulnerabilities across the enterprise/);
   assert.match(html, /UnitedHealth Group/);
   assert.match(html, /Who is Taha Ahmed\?/);

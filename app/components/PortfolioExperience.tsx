@@ -306,8 +306,7 @@ export default function PortfolioExperience() {
           </h1>
           <div className="hero-bottom">
             <p className="role-focus">
-              <span>What I do</span>
-              <strong>Build useful software</strong>
+              <strong>Ambitions start with 0s and end with 1s.</strong>
             </p>
             <button type="button" className="text-link" onClick={() => navigate("experience")}>
               View experience <ArrowDown size={16} />
