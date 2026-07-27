@@ -158,8 +158,8 @@ export default function PortfolioExperience() {
       return;
     }
 
-    const submitTimer = window.setTimeout(() => setIntroPhase("submitted"), 1650);
-    const finishTimer = window.setTimeout(() => setIntroPhase("done"), 2550);
+    const submitTimer = window.setTimeout(() => setIntroPhase("submitted"), 2500);
+    const finishTimer = window.setTimeout(() => setIntroPhase("done"), 3400);
     const skipIntro = (event: KeyboardEvent) => {
       if (event.key !== "Enter" && event.key !== "Escape") return;
       window.clearTimeout(submitTimer);
@@ -306,8 +306,8 @@ export default function PortfolioExperience() {
           </h1>
           <div className="hero-bottom">
             <p className="role-focus">
-              <span>Current focus</span>
-              <strong>Shipping products</strong>
+              <span>What I do</span>
+              <strong>Build useful software</strong>
             </p>
             <button type="button" className="text-link" onClick={() => navigate("experience")}>
               View experience <ArrowDown size={16} />

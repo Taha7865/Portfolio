@@ -147,7 +147,7 @@ a {
   line-height: 1.1;
   letter-spacing: -0.04em;
   white-space: nowrap;
-  animation: intro-type 1100ms steps(18, end) 180ms forwards;
+  animation: intro-type 2000ms steps(18, end) 180ms forwards;
 }
 
 .intro-cursor {
