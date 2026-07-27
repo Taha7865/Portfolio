@@ -66,6 +66,20 @@ function Explorer({
 }) {
   return (
     <nav className="tree" aria-label="Portfolio index">
+      <figure className="explorer-face">
+        <div className="face-frame">
+          <img
+            src="/face.png"
+            alt="Taha Ahmed at an art gallery"
+            width={900}
+            height={1200}
+          />
+        </div>
+        <figcaption>
+          <span>face.png</span>
+          <span>900 × 1200</span>
+        </figcaption>
+      </figure>
       <p className="tree-caption">Directory</p>
       <div className="tree-root">
         <ChevronRight size={13} className="root-chevron" />
