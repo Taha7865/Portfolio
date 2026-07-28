@@ -51,23 +51,31 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.match(html, /Acquired by UnitedHealthcare/);
   assert.match(html, /New York City/);
   assert.match(html, />Taha</);
-  assert.match(html, /https:\/\/portfolio\.example\/og-editorial\.png/);
+  assert.match(
+    html,
+    /<meta property="og:image" content="https:\/\/[^"]+\/og-editorial\.png"/,
+  );
   assert.doesNotMatch(html, /Publishing Concepts|skills\.json|projects\.tsx|ShoeTopia/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
-test("keeps the finished experience wired to its navigation", async () => {
-  const [page, layout, portfolio, packageJson] = await Promise.all([
+test("keeps the finished experience wired to its navigation and static deployment", async () => {
+  const [page, layout, portfolio, packageJson, nextConfig, netlifyConfig] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/components/PortfolioExperience.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../next.config.ts", import.meta.url), "utf8"),
+    readFile(new URL("../netlify.toml", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /<PortfolioExperience \/>/);
-  assert.match(layout, /generateMetadata/);
+  assert.match(layout, /export const metadata: Metadata/);
   assert.match(portfolio, /IntersectionObserver/);
   assert.match(portfolio, /aria-current/);
+  assert.match(nextConfig, /output: "export"/);
+  assert.match(netlifyConfig, /publish = "out"/);
+  assert.match(netlifyConfig, /NETLIFY_NEXT_PLUGIN_SKIP = "true"/);
   assert.doesNotMatch(portfolio, /VisualLayer|LightweightFolder|showDesktop3D/);
   assert.doesNotMatch(packageJson, /"@react-three\/fiber"|"three"/);
   assert.doesNotMatch(portfolio, /TAHA-PORTFOLIO/);
