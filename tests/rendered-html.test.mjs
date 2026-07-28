@@ -43,7 +43,7 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.match(html, /Resolving vulnerabilities across the enterprise/);
   assert.match(html, /UnitedHealth Group/);
   assert.match(html, /Who is Taha Ahmed\?/);
-  assert.match(html, /\/face\.png/);
+  assert.match(html, /\/portrait\.png/);
   assert.match(html, /Connecting students to insurance/);
   assert.match(html, /meet\.taha\.ahmed@gmail\.com/);
   assert.match(html, /Product &amp; Engineering/);
@@ -73,6 +73,6 @@ test("keeps the finished experience wired to its navigation", async () => {
   assert.doesNotMatch(portfolio, /TAHA-PORTFOLIO/);
 
   await access(new URL("../public/og-editorial.png", import.meta.url));
-  await access(new URL("../public/face.png", import.meta.url));
+  await access(new URL("../public/portrait.png", import.meta.url));
   await assert.rejects(access(new URL("../app/_sites-preview", templateRoot)));
 });

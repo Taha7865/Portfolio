@@ -69,14 +69,14 @@ function Explorer({
       <figure className="explorer-face">
         <div className="face-frame">
           <img
-            src="/face.png"
+            src="/portrait.png"
             alt="Taha Ahmed at an art gallery"
             width={900}
             height={1200}
           />
         </div>
         <figcaption>
-          <span>face.png</span>
+          <span>portrait.png</span>
           <span>900 × 1200</span>
         </figcaption>
       </figure>
