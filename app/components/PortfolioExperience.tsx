@@ -28,7 +28,7 @@ const SECTIONS: SectionDefinition[] = [
 
 const EXPERIENCE = [
   {
-    period: "Now",
+    period: "Current",
     role: "Product & Engineering",
     company: "Level2",
     acquisition: "Acquired by UnitedHealthcare",
@@ -300,7 +300,6 @@ export default function PortfolioExperience() {
 
         <section id="about" className="content-section hero-section">
           <h1>Taha Ahmed</h1>
-          <p className="role-focus">Ambitions start with 0s and end with 1s.</p>
         </section>
 
         <section
