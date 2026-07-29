@@ -146,7 +146,7 @@ export default function PortfolioExperience() {
         ([entry]) => {
           if (entry.isIntersecting) setActiveId(section.id);
         },
-        { rootMargin: "-44% 0px -44% 0px", threshold: 0 },
+        { rootMargin: "-20% 0px -20% 0px", threshold: 0 },
       );
 
       observer.observe(element);
@@ -333,7 +333,6 @@ export default function PortfolioExperience() {
 
         <section id="contact" className="content-section contact-section">
           <div className="contact-copy">
-            <h2>Reach out.</h2>
             <a className="email-link" href="mailto:meet.taha.ahmed@gmail.com">
               <span>meet.taha.ahmed@gmail.com</span>
               <ArrowUpRight size={28} />

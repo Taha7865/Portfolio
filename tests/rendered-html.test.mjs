@@ -58,6 +58,7 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   );
   assert.doesNotMatch(html, /Product &amp; Engineering at Level2/);
   assert.doesNotMatch(html, /<h2>Experience<\/h2>|>Career</);
+  assert.doesNotMatch(html, /Reach out\./);
   assert.doesNotMatch(html, /Publishing Concepts|skills\.json|projects\.tsx|ShoeTopia/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });

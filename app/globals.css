@@ -11,6 +11,7 @@
   --accent: #ff5b35;
   --sidebar-width: 276px;
   --page-pad: clamp(28px, 5.5vw, 88px);
+  --heading-size: clamp(24px, 2.3vw, 30px);
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
@@ -567,9 +568,8 @@ a {
 
 .content-section {
   position: relative;
-  min-height: 100svh;
-  padding: clamp(96px, 12vh, 148px) var(--page-pad) 64px;
-  border-bottom: 1px solid var(--line);
+  min-height: 0;
+  padding-inline: var(--page-pad);
 }
 
 .content-section:not(.hero-section) {
@@ -578,17 +578,18 @@ a {
 }
 
 .hero-section {
-  min-height: 74svh;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding-top: clamp(128px, 18vh, 196px);
+  padding-bottom: 32px;
 }
 
 .hero-section h1 {
   margin: 0;
-  font-size: clamp(42px, 5.2vw, 70px);
+  font-size: var(--heading-size);
   font-weight: 590;
   line-height: 1;
   letter-spacing: -0.055em;
@@ -607,12 +608,11 @@ a {
 
 .experience-section {
   min-height: auto;
-  padding-block: clamp(72px, 9vw, 116px);
+  padding-bottom: clamp(56px, 7vw, 88px);
 }
 
 .experience-list {
   width: min(820px, 100%);
-  border-top: 1px solid var(--line-strong);
 }
 
 .experience-row {
@@ -620,7 +620,10 @@ a {
   grid-template-columns: 86px minmax(0, 1fr);
   gap: clamp(22px, 3.5vw, 48px);
   padding: clamp(28px, 4vw, 44px) 0;
-  border-bottom: 1px solid var(--line);
+}
+
+.experience-row:first-child {
+  padding-top: 0;
 }
 
 .experience-period {
@@ -638,7 +641,7 @@ a {
 
 .experience-content h3 {
   margin: 0;
-  font-size: clamp(20px, 2.2vw, 30px);
+  font-size: var(--heading-size);
   font-weight: 520;
   line-height: 1.15;
   letter-spacing: -0.035em;
@@ -689,28 +692,20 @@ a {
 }
 
 .contact-section {
-  min-height: 68svh;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding-bottom: 32px;
 }
 
 .contact-copy {
-  margin: auto 0;
-}
-
-.contact-section h2 {
   margin: 0;
-  font-size: clamp(28px, 3.8vw, 48px);
-  font-weight: 560;
-  line-height: 1.05;
-  letter-spacing: -0.045em;
 }
 
 .email-link {
   width: fit-content;
   max-width: 100%;
-  margin-top: clamp(22px, 3vw, 34px);
+  margin-top: 0;
   padding-bottom: 7px;
   display: flex;
   align-items: center;
@@ -733,6 +728,7 @@ a {
 }
 
 .site-footer {
+  margin-top: clamp(72px, 10vw, 120px);
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
@@ -750,10 +746,6 @@ a {
 
   .explorer {
     padding-inline: 20px;
-  }
-
-  .hero-section h1 {
-    font-size: clamp(40px, 5.8vw, 62px);
   }
 }
 
@@ -874,18 +866,14 @@ a {
   }
 
   .content-section {
-    padding-top: 100px;
+    padding-inline: var(--page-pad);
   }
 
   .hero-section {
-    min-height: 72svh;
+    min-height: 0;
     justify-content: flex-start;
     padding-top: 124px;
-  }
-
-  .hero-section h1 {
-    margin: 0;
-    font-size: clamp(40px, 10vw, 58px);
+    padding-bottom: 28px;
   }
 
   .experience-list {
@@ -919,11 +907,6 @@ a {
     justify-self: end;
   }
 
-  .hero-section h1 {
-    font-size: clamp(38px, 11vw, 52px);
-    line-height: 1;
-  }
-
   .experience-row {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -931,7 +914,7 @@ a {
 
   .experience-period {
     padding-top: 0;
-    color: var(--accent);
+    color: var(--muted);
   }
 
   .role-heading {
@@ -951,10 +934,6 @@ a {
 
   .role-detail {
     margin-top: 24px;
-  }
-
-  .contact-section h2 {
-    font-size: clamp(28px, 9vw, 40px);
   }
 
   .email-link {
