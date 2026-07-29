@@ -46,6 +46,7 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.match(html, /\/portrait\.png/);
   assert.match(html, /Connecting students to insurance/);
   assert.match(html, /meet\.taha\.ahmed@gmail\.com/);
+  assert.match(html, /href="mailto:meet\.taha\.ahmed@gmail\.com"/);
   assert.match(html, /Product &amp; Engineering/);
   assert.match(html, /Level2/);
   assert.match(html, /Acquired by UnitedHealthcare/);
@@ -55,6 +56,8 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
     html,
     /<meta property="og:image" content="https:\/\/[^"]+\/og-editorial\.png"/,
   );
+  assert.doesNotMatch(html, /Product &amp; Engineering at Level2/);
+  assert.doesNotMatch(html, /<h2>Experience<\/h2>|>Career</);
   assert.doesNotMatch(html, /Publishing Concepts|skills\.json|projects\.tsx|ShoeTopia/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });

@@ -281,18 +281,13 @@ a {
 }
 
 .brand-mark strong {
-  font-size: 16px;
-  font-weight: 620;
+  font-size: 15px;
+  font-weight: 580;
   letter-spacing: -0.025em;
 }
 
-.brand-mark span {
-  color: var(--muted);
-  font: 400 10px/1.3 var(--mono);
-}
-
 .tree {
-  margin-top: clamp(38px, 6vh, 64px);
+  margin-top: clamp(30px, 5vh, 52px);
 }
 
 .explorer-face {
@@ -583,139 +578,48 @@ a {
 }
 
 .hero-section {
-  min-height: 100svh;
+  min-height: 74svh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.hero-status {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--muted);
-  font: 450 10px/1 var(--mono);
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: clamp(128px, 18vh, 196px);
 }
 
 .hero-section h1 {
-  margin: clamp(52px, 8vh, 92px) 0;
-  display: flex;
-  flex-direction: column;
-  font-size: clamp(78px, 11vw, 174px);
-  font-weight: 650;
-  line-height: 0.73;
-  letter-spacing: -0.085em;
-}
-
-.hero-section h1 span:last-child {
-  margin-left: clamp(28px, 9vw, 150px);
-  color: transparent;
-  -webkit-text-stroke: 1px #73736f;
-}
-
-.hero-bottom {
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 30px;
+  margin: 0;
+  font-size: clamp(42px, 5.2vw, 70px);
+  font-weight: 590;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  text-align: left;
 }
 
 .role-focus {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.role-focus span {
-  color: var(--dim);
-  font: 500 8px/1 var(--mono);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.role-focus strong {
-  color: #c6c6c1;
-  font-size: clamp(16px, 1.4vw, 20px);
-  font-weight: 480;
-  letter-spacing: -0.025em;
-}
-
-.text-link {
-  padding: 0 0 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 0;
-  border-bottom: 1px solid var(--line-strong);
-  background: transparent;
-  color: var(--ink);
-  font: 500 10px/1 var(--mono);
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: color 160ms ease, border-color 160ms ease;
-}
-
-.text-link:hover,
-.text-link:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent);
-  outline: none;
+  max-width: 520px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.015em;
 }
 
 .experience-section {
-  background: #080808;
-}
-
-.section-heading {
-  display: grid;
-  grid-template-columns: minmax(120px, 0.35fr) 1fr;
-  align-items: end;
-  gap: 32px;
-  margin-bottom: clamp(64px, 10vw, 126px);
-}
-
-.section-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--dim);
-  font: 500 9px/1 var(--mono);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.section-label span:first-child {
-  color: var(--accent);
-}
-
-.section-heading h2,
-.contact-section h2 {
-  margin: 0;
-  font-size: clamp(54px, 7.5vw, 116px);
-  font-weight: 590;
-  line-height: 0.85;
-  letter-spacing: -0.065em;
+  min-height: auto;
+  padding-block: clamp(72px, 9vw, 116px);
 }
 
 .experience-list {
-  margin-left: clamp(0px, 8vw, 130px);
+  width: min(820px, 100%);
   border-top: 1px solid var(--line-strong);
 }
 
 .experience-row {
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 64px);
-  padding: clamp(34px, 5vw, 62px) 0;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: clamp(22px, 3.5vw, 48px);
+  padding: clamp(28px, 4vw, 44px) 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -734,10 +638,10 @@ a {
 
 .experience-content h3 {
   margin: 0;
-  font-size: clamp(25px, 3vw, 42px);
-  font-weight: 540;
-  line-height: 1.05;
-  letter-spacing: -0.045em;
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 520;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 }
 
 .acquisition-note {
@@ -771,7 +675,7 @@ a {
 
 .role-detail {
   max-width: 620px;
-  margin: 28px 0 0;
+  margin: 22px 0 0;
   color: #969691;
   font-size: 14px;
   line-height: 1.65;
@@ -785,6 +689,7 @@ a {
 }
 
 .contact-section {
+  min-height: 68svh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -795,20 +700,24 @@ a {
 }
 
 .contact-section h2 {
-  font-size: clamp(72px, 11vw, 174px);
+  margin: 0;
+  font-size: clamp(28px, 3.8vw, 48px);
+  font-weight: 560;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
 }
 
 .email-link {
   width: fit-content;
   max-width: 100%;
-  margin-top: clamp(48px, 7vw, 86px);
-  padding-bottom: 10px;
+  margin-top: clamp(22px, 3vw, 34px);
+  padding-bottom: 7px;
   display: flex;
   align-items: center;
   gap: 16px;
   border-bottom: 1px solid var(--line-strong);
   color: #c9c9c4;
-  font: 400 clamp(14px, 1.7vw, 23px)/1.2 var(--mono);
+  font: 400 clamp(13px, 1.3vw, 17px)/1.3 var(--mono);
   transition: color 160ms ease, border-color 160ms ease;
 }
 
@@ -844,7 +753,7 @@ a {
   }
 
   .hero-section h1 {
-    font-size: clamp(72px, 11.5vw, 130px);
+    font-size: clamp(40px, 5.8vw, 62px);
   }
 }
 
@@ -969,22 +878,14 @@ a {
   }
 
   .hero-section {
-    min-height: 100svh;
-    justify-content: center;
+    min-height: 72svh;
+    justify-content: flex-start;
+    padding-top: 124px;
   }
 
   .hero-section h1 {
-    margin-block: 68px;
-    font-size: clamp(68px, 19vw, 126px);
-  }
-
-  .hero-section h1 span:last-child {
-    margin-left: 8vw;
-  }
-
-  .section-heading {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    margin: 0;
+    font-size: clamp(40px, 10vw, 58px);
   }
 
   .experience-list {
@@ -1019,15 +920,8 @@ a {
   }
 
   .hero-section h1 {
-    margin-block: 62px;
-    font-size: clamp(64px, 21vw, 94px);
-    line-height: 0.78;
-  }
-
-  .hero-bottom {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 38px;
+    font-size: clamp(38px, 11vw, 52px);
+    line-height: 1;
   }
 
   .experience-row {
@@ -1060,7 +954,7 @@ a {
   }
 
   .contact-section h2 {
-    font-size: clamp(70px, 22vw, 104px);
+    font-size: clamp(28px, 9vw, 40px);
   }
 
   .email-link {

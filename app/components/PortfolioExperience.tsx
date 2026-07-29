@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ArrowDown,
   ArrowUpRight,
   ChevronRight,
   FileCode2,
@@ -23,7 +22,7 @@ type SectionDefinition = {
 
 const SECTIONS: SectionDefinition[] = [
   { id: "about", folder: "profile", file: "README.md", Icon: FileText },
-  { id: "experience", folder: "career", file: "experience.ts", Icon: FileCode2 },
+  { id: "experience", folder: "work", file: "experience.ts", Icon: FileCode2 },
   { id: "contact", folder: "contact", file: "email.txt", Icon: Mail },
 ];
 
@@ -122,15 +121,6 @@ function Explorer({
         })}
       </div>
     </nav>
-  );
-}
-
-function SectionLabel({ index, children }: { index: string; children: React.ReactNode }) {
-  return (
-    <div className="section-label">
-      <span>{index}</span>
-      <span>{children}</span>
-    </div>
   );
 }
 
@@ -253,7 +243,6 @@ export default function PortfolioExperience() {
       <aside className="explorer">
         <a href="#about" onClick={() => navigate("about")} className="brand-mark">
           <strong>Taha Ahmed</strong>
-          <span>Product &amp; Engineering</span>
         </a>
 
         <Explorer activeId={activeId} onNavigate={navigate} />
@@ -310,30 +299,15 @@ export default function PortfolioExperience() {
         </div>
 
         <section id="about" className="content-section hero-section">
-          <div className="hero-status">
-            <span className="status-dot" />
-            Product &amp; Engineering at Level2
-          </div>
-          <h1 aria-label="Taha Ahmed">
-            <span>Taha</span>
-            <span>Ahmed</span>
-          </h1>
-          <div className="hero-bottom">
-            <p className="role-focus">
-              <strong>Ambitions start with 0s and end with 1s.</strong>
-            </p>
-            <button type="button" className="text-link" onClick={() => navigate("experience")}>
-              View experience <ArrowDown size={16} />
-            </button>
-          </div>
+          <h1>Taha Ahmed</h1>
+          <p className="role-focus">Ambitions start with 0s and end with 1s.</p>
         </section>
 
-        <section id="experience" className="content-section experience-section">
-          <header className="section-heading">
-            <SectionLabel index="01">Career</SectionLabel>
-            <h2>Experience</h2>
-          </header>
-
+        <section
+          id="experience"
+          className="content-section experience-section"
+          aria-label="Work history"
+        >
           <div className="experience-list">
             {EXPERIENCE.map((item) => (
               <article className="experience-row" key={`${item.company}-${item.period}`}>
@@ -358,7 +332,6 @@ export default function PortfolioExperience() {
         </section>
 
         <section id="contact" className="content-section contact-section">
-          <SectionLabel index="02">Contact</SectionLabel>
           <div className="contact-copy">
             <h2>Reach out.</h2>
             <a className="email-link" href="mailto:meet.taha.ahmed@gmail.com">
