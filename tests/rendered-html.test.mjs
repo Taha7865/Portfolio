@@ -42,8 +42,9 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.doesNotMatch(html, /Ambitions start with 0s and end with 1s\./);
   assert.match(html, /Resolving vulnerabilities across the enterprise/);
   assert.match(html, /UnitedHealth Group/);
-  assert.match(html, /Who is Taha Ahmed\?/);
-  assert.match(html, /\/portrait\.png/);
+  assert.doesNotMatch(html, /Who is Taha Ahmed\?/);
+  assert.match(html, /nyc-skyline-refined\.webp/);
+  assert.doesNotMatch(html, /\/portrait\.png/);
   assert.match(html, /Connecting students to insurance/);
   assert.match(html, /meet\.taha\.ahmed@gmail\.com/);
   assert.match(html, /href="mailto:meet\.taha\.ahmed@gmail\.com"/);
@@ -52,10 +53,10 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.match(html, /Level2/);
   assert.match(html, /Acquired by UnitedHealthcare/);
   assert.match(html, /New York City/);
-  assert.match(html, />Taha</);
+  assert.match(html, /<h1[^>]*>Taha Ahmed<\/h1>/);
   assert.match(
     html,
-    /<meta property="og:image" content="https:\/\/[^"]+\/og-editorial\.png"/,
+    /<meta property="og:image" content="https:\/\/[^"]+\/nyc-skyline-refined\.webp"/,
   );
   assert.doesNotMatch(html, /Product &amp; Engineering at Level2/);
   assert.doesNotMatch(html, /<h2>Experience<\/h2>|>Career</);
@@ -76,8 +77,12 @@ test("keeps the finished experience wired to its navigation and static deploymen
 
   assert.match(page, /<PortfolioExperience \/>/);
   assert.match(layout, /export const metadata: Metadata/);
-  assert.match(portfolio, /IntersectionObserver/);
-  assert.match(portfolio, /aria-current/);
+  assert.match(portfolio, /aria-label="Experience"/);
+  assert.doesNotMatch(
+    portfolio,
+    /IntersectionObserver|aria-current|Explorer|mobileTreeOpen|experience\.ts/,
+  );
+  assert.doesNotMatch(portfolio, /React · Flask|Angular · C#|API integration|ASP\.NET/);
   assert.match(nextConfig, /output: "export"/);
   assert.match(netlifyConfig, /publish = "out"/);
   assert.match(netlifyConfig, /NETLIFY_NEXT_PLUGIN_SKIP = "true"/);
@@ -85,7 +90,6 @@ test("keeps the finished experience wired to its navigation and static deploymen
   assert.doesNotMatch(packageJson, /"@react-three\/fiber"|"three"/);
   assert.doesNotMatch(portfolio, /TAHA-PORTFOLIO/);
 
-  await access(new URL("../public/og-editorial.png", import.meta.url));
-  await access(new URL("../public/portrait.png", import.meta.url));
+  await access(new URL("../public/nyc-skyline-refined.webp", import.meta.url));
   await assert.rejects(access(new URL("../app/_sites-preview", templateRoot)));
 });

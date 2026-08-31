@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     url: origin,
     images: [
       {
-        url: `${origin}/og-editorial.png`,
-        width: 1536,
-        height: 1024,
-        alt: "Taha Ahmed — Product and Engineering in New York City",
+        url: `${origin}/nyc-skyline-refined.webp`,
+        width: 1672,
+        height: 941,
+        alt: "Surreal cobalt and ivory illustration of New York City and the Brooklyn Bridge",
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Taha Ahmed — Product & Engineering",
     description: "Product and engineering at Level2 in New York City.",
-    images: [`${origin}/og-editorial.png`],
+    images: [`${origin}/nyc-skyline-refined.webp`],
   },
 };
 
