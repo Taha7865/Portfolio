@@ -1,6 +1,15 @@
 const EXPERIENCE = [
   {
-    period: "Current",
+    period: "Jun 2026—Current",
+    role: "Forward Deployed Engineer",
+    company: "Optum",
+    acquisition: null,
+    place: "New York City",
+    detail: "Turning messy problems into deployed software.",
+    stack: null,
+  },
+  {
+    period: "Previous",
     role: "Product & Engineering",
     company: "Level2",
     acquisition: "Acquired by UnitedHealthcare",
@@ -15,15 +24,6 @@ const EXPERIENCE = [
     acquisition: null,
     place: "Austin, TX",
     detail: "Resolving vulnerabilities across the enterprise.",
-    stack: null,
-  },
-  {
-    period: "2022",
-    role: "Software Engineer Intern",
-    company: "UnitedHealthcare",
-    acquisition: null,
-    place: "Dallas, TX",
-    detail: "Connecting students to insurance.",
     stack: null,
   },
 ];

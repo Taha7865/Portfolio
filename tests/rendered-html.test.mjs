@@ -36,7 +36,7 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Taha Ahmed — Product &amp; Engineering<\/title>/i);
+  assert.match(html, /<title>Taha Ahmed — Forward Deployed Engineer<\/title>/i);
   assert.match(html, /Taha/);
   assert.match(html, /Ahmed/);
   assert.doesNotMatch(html, /Ambitions start with 0s and end with 1s\./);
@@ -45,11 +45,15 @@ test("server-renders Taha Ahmed's portfolio and social metadata", async () => {
   assert.doesNotMatch(html, /Who is Taha Ahmed\?/);
   assert.match(html, /nyc-skyline-refined\.webp/);
   assert.doesNotMatch(html, /\/portrait\.png/);
-  assert.match(html, /Connecting students to insurance/);
+  assert.match(html, /Forward Deployed Engineer/);
+  assert.match(html, /Jun 2026—Current/);
+  assert.match(html, /Turning messy problems into deployed software\./);
+  assert.match(html, /Optum/);
+  assert.doesNotMatch(html, /Connecting students to insurance|Dallas, TX|>2022</);
   assert.match(html, /meet\.taha\.ahmed@gmail\.com/);
   assert.match(html, /href="mailto:meet\.taha\.ahmed@gmail\.com"/);
   assert.match(html, /Product &amp; Engineering/);
-  assert.match(html, />Current</);
+  assert.match(html, /Jun 2026—Current/);
   assert.match(html, /Level2/);
   assert.match(html, /Acquired by UnitedHealthcare/);
   assert.match(html, /New York City/);

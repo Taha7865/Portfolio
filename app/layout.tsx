@@ -9,12 +9,12 @@ const origin =
 
 export const metadata: Metadata = {
   metadataBase: new URL(origin),
-  title: "Taha Ahmed — Product & Engineering",
-  description: "Product and engineering at Level2 in New York City.",
+  title: "Taha Ahmed — Forward Deployed Engineer",
+  description: "Forward Deployed Engineer at Optum in New York City.",
   applicationName: "Taha Ahmed Portfolio",
   openGraph: {
-    title: "Taha Ahmed — Product & Engineering",
-    description: "Explore Taha Ahmed’s experience across product and engineering.",
+    title: "Taha Ahmed — Forward Deployed Engineer",
+    description: "Explore Taha Ahmed’s experience across engineering and product.",
     type: "website",
     url: origin,
     images: [
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Taha Ahmed — Product & Engineering",
-    description: "Product and engineering at Level2 in New York City.",
+    title: "Taha Ahmed — Forward Deployed Engineer",
+    description: "Forward Deployed Engineer at Optum in New York City.",
     images: [`${origin}/nyc-skyline-refined.webp`],
   },
 };
